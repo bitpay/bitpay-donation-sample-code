@@ -25,15 +25,14 @@ To install, copy and paste into an existing page (including css references, jque
 * Click **Donation Buttons**
 	* If you do not see this, you will need to contact our compliance team at [compliance@bitpay.com](mailto:compliance@bitpay.com)
 * Click **Generate**
-* Scroll down and look for code that resembles the following
-	* ```<input type="hidden" name="data" value = "<long string of characters">```
-* Copy that value into the source code of this repo
+	*Scroll down and look for the following ```<input type="hidden" name="data" value = "<long string of characters">```
+
+* Scroll down to the bottom of the html and look for ```$env = "test"```
+	* If you are in `test` mode, do not change this value, as it is the default
+* Copy the value from the `Donation Button` source code to either the `$test_token` and/or `$prod_token`
 * Edit the **redirectURL** value to redirect users after a payment is made
 
 **Configuration** is now complete.
-	
-* *note*: if you are using the `test.bitpay.com` to verify functionality, the **form action** should point to `https://test.bitpay.com/checkout`.  If you are in a live environment, it should be changed to `https://bitpay.com/checkout` with a **production** token.
-
 
 ## License
 
