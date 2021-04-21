@@ -410,16 +410,17 @@
 
         }
 
-        $env = "test"
-        $test_token = "test token"
-        $prod_token = "production token"       
+        $env = "prod"
+        $test_token = "test token goes here"
+        $prod_token = "prod token goes here"       
         function updateEnv($env) {
             if ($env == "test") {
                 $("#donateForm").attr('action',('https://test.bitpay.com/checkout'))
                 $("#apiToken").attr("value",$test_token)
 
-            } else {
-                $("#donateForm").attr('action',('https://www.bitpay.com/checkout'))
+            }
+            else{
+                $("#donateForm").attr('action',('https://bitpay.com/checkout'))
                 $("#apiToken").attr("value",$prod_token)
             }
 
