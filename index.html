@@ -118,6 +118,7 @@
 
         .bitpay-donate-field {
             clear: both;
+            width:40%;
         }
 
         .bitpay-donate-field label {
@@ -129,17 +130,6 @@
             float: left;
         }
 
-        .bitpay-donate-field-email {
-            width: 80%;
-        }
-
-        .bitpay-donate-field-price {
-            width: 40%;
-        }
-
-        .bitpay-donate-field-currency {
-            width: 40%;
-        }
 
         .bitpay-donate-button-wrapper {
             clear: both;
@@ -155,12 +145,12 @@
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row payment-info">
             <div class="col-12">
                 <p class="headerTop">Your contribution will benefit RECIPIENT.</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row payment-info">
             <div class="col-3 payment-cell payment" id="payment_2800" onclick="updateVal('2800')">
                 <p>$2,800</p>
             </div>
@@ -171,7 +161,7 @@
                 <p>$500</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row payment-info">
             <div class="col-3 payment-cell payment" id="payment_100" onclick="updateVal('100')">
                 <p>$100</p>
             </div>
@@ -185,31 +175,40 @@
         <form class="bitpay-donate" action="https://test.bitpay.com/checkout" id="donateForm" method="post">
             <input name="action" type="hidden" value="checkout">
             <fieldset>
-                <div class="row">
-                    <div class="col-12 payment-info">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>Name:</label>
-                        <input type="text" class="inputField  field-input" name="buyerName" id="buyerName" placeholder="Name">
                     </div>
+                    <div class="col-9">
+                    <input type="text" class="inputField  field-input bitpay-donate-field " name="buyerName" id="buyerName" placeholder="Name">
+                </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12 payment-info">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>Address:</label>
-                        <input type="text" class="inputField  field-input" name="buyerAddress1" id="buyerAddress1" placeholder="Address">
                     </div>
+                    <div class="col-9">
+                    <input type="text" class="inputField  field-input bitpay-donate-field " name="buyerAddress1" id="buyerAddress1" placeholder="Address">
+                </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12 payment-info">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>City:</label>
-                        <input type="text" class="inputField  field-input" name="buyerLocality" id="buyerLocality" placeholder="City">
                     </div>
+                    <div class="col-9">
+                    <input type="text" class="inputField  field-input bitpay-donate-field " name="buyerLocality" id="buyerLocality" placeholder="City">
+                </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12 payment-info">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>State:</label>
-                        <select class="bitpay-donate-field-currency field-input" name="buyerRegion" id="buyerRegion">
+                    </div>
+
+                    <div class = "col-9">
+                        <select class="inputField bitpay-donate-field  field-input" name="buyerRegion" id="buyerRegion">
                             <option value="-" selected>--Select a state--</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -266,45 +265,57 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12 payment-info">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>Zip:</label>
-                        <input type="text" class="inputField  field-input" name="buyerPostalCode" id="buyerPostalCode" placeholder="Zip Code">
                     </div>
+                    <div class="col-9">
+                    <input type="text" class="inputField  field-input bitpay-donate-field " name="buyerPostalCode" id="buyerPostalCode" placeholder="Zip Code">
+                </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12 payment-info">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>Phone Number:</label>
-                        <input type="text" class="inputField field-input" name="buyerPhone" id="buyerPhone" placeholder="Phone Number">
                     </div>
+                    <div class="col-9">
+                    <input type="text" class="inputField field-input bitpay-donate-field " name="buyerPhone" id="buyerPhone" placeholder="Phone Number">
+                </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>Email:</label>
-                        <input class="bitpay-donate-field-email field-input inputField" name="buyerEmail" id="buyerEmail" type="email" placeholder="Email address" maxlength=50 autocapitalize=off autocorrect=off><br>
+                    </div>
+                    <div class = "col-9">
+                        <input type="text" class="inputField field-input bitpay-donate-field " name="buyerEmail" id="buyerEmail" type="email" placeholder="Email address" autocapitalize=off autocorrect=off><br>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>Amount:</label>
-                        <input class="bitpay-donate-field-price field-input inputField" name="price" id="price" type="number" placeholder="Amount" />
                     </div>
+                    <div class="col-9">
+                        <input type="text" class="inputField field-input bitpay-donate-field " name="price" id="price" type="number" placeholder="Amount" />
+                </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>Employer:</label>
-                        <input class="bitpay-donate-field-price field-input inputField" name="buyerEmployer" id="buyerEmployer" placeholder="Employer" />
                     </div>
+                    <div class="col-9">
+                        <input type="text" class="inputField field-input bitpay-donate-field " name="buyerEmployer" id="buyerEmployer" placeholder="Employer" />
+                </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
+                <div class="row payment-info">
+                    <div class="col-3">
                         <label>Occupation:</label>
-                        <input class="bitpay-donate-field-price field-input inputField" name="buyerJobTitle" id="buyerJobTitle" placeholder="Occupation" />
                     </div>
+                    <div class="col-9">
+                        <input type="text" class="inputField field-input bitpay-donate-field " name="buyerJobTitle" id="buyerJobTitle" placeholder="Occupation" />
+                </div>
                 </div>
 
 
@@ -324,7 +335,7 @@
                 <input type="hidden" id = "apiToken" name="data" value="your test api token" />
             </fieldset>
         </form>
-        <div class="row">
+        <div class="row payment-info">
             <div class="col-12">
                 <p class="disclaimer">Contributions or gifts to RECIPIENT are not tax deductible. Contributions are limited to $10,000 per PAC per election cycle ($5,000 primary and $5,000 general) and $5,600 per individual per election cycle ($2,800 primary and $2,800 general). Contributions from the general treasury funds of corporations, labor unions, and national banks are prohibited.
                     Federal contractors and foreign nationals who are not admitted for permanent residence in the United States are prohibited
@@ -410,7 +421,7 @@
 
         }
 
-        $env = "prod"
+        $env = "test"
         $test_token = "test token goes here"
         $prod_token = "prod token goes here"       
         function updateEnv($env) {
